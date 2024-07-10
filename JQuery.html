@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JQuery validation example 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Lato';
+            font-weight: 300;
+            font-size: 1.25rem;
+            background: #3494e6;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #ec6ead, #3494e6);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #ec6ead, #3494e6);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h4 {
+            font-weight: bold;
+            margin-bottom: 2.5rem;
+            font-family: 'Lato';
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        p.note {
+            font-size: 1rem;
+            color: red;
+        }
+
+        input {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 8px;
+            font-family: 'Lato';
+            width: 100%;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+
+        label {
+            width: 100%;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        label span {
+            font-size: 1rem;
+        }
+
+        label.error {
+            color: red;
+            font-size: 1rem;
+            display: block;
+            margin-top: 5px;
+        }
+
+        input.error {
+            border: 1px dashed red;
+            font-weight: 300;
+            color: red;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            width: 400px;
+            max-width: 100%;
+        }
+
+        [type="reset"],
+        html [type="button"] {
+            margin-left: 0;
+            border-radius: 5px;
+            background: black;
+            color: white;
+            border: none;
+            font-weight: 300;
+            padding: 10px 20px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        button[type="submit"] {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3494e6;
+            color: white;
+            font-size: 1rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2779bd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h4>jQuery Validation Form Example</h4>
+        <form id="basic-form" action="" method="post">
+            <p>
+                <label for="first_name">First Name</label>
+                <input id="first_name" name="first_name" minlength="8" type="text" required>
+            </p>
+            <p>
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" minlength="8" required>
+            </p>
+            <p>
+                <label for="email">E-Mail <span>(required)</span></label>
+                <input id="email" type="email" name="email" required>
+            </p>
+            <p>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+            </p>
+            <p>
+                <button class="submit" type="submit">Submit</button>
+            </p>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#basic-form").validate();
+        });
+    </script>
+</body>
+
+</html>
